@@ -11,9 +11,9 @@ public class Car extends Vehicle {
 		this.model = model;
 	}
 
-	// public int getLeaseAmount() {
-	// return 3500;
-	// }
+	public int getLeaseAmount() {
+		return 3500;
+	}
 
 	// METHOD OVERRIDDING
 	public String interiors() {
