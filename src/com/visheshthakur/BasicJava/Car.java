@@ -1,8 +1,9 @@
 package com.visheshthakur.BasicJava;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Car {
+public class Car implements Comparable<Car> {
 	String make, model, color;
 	int year, price;
 
@@ -39,6 +40,23 @@ public class Car {
 		System.out.println("Has got leather interiors");
 	}
 
+	public static void Search(String[] arr, String targetValue) {
+		for (String s : arr) {
+			if (s.equals(targetValue))
+				System.out.println();
+		}
+	}
+
+	@Override
+	public int compareTo(Car myCar) {
+		if (price == myCar.price)
+			return 0;
+		else if (price < myCar.price)
+			return 1;
+		else
+			return -1;
+	}
+
 	public static void main(String[] args) {
 		Car[] ArrayofCars = new Car[10];
 		Car Audi1 = new Car("Audi", "A6", "Red", 2016, 45600);
@@ -63,6 +81,12 @@ public class Car {
 		ArrayofCars[8] = Honda2;
 		ArrayofCars[9] = Kia2;
 
+		System.out.println("List of cars based on Car prices from highest to least:");
+		Arrays.sort(ArrayofCars);
+		for (Car c : ArrayofCars) {
+			System.out.println(c.getMake() + " " + c.getModel() + " " + c.getPrice());
+		}
+
 		System.out.println("What brand would you prefer?");
 		Scanner sc = new Scanner(System.in);
 		String brand = sc.nextLine();
@@ -80,6 +104,7 @@ public class Car {
 				break;
 			}
 		}
+
 	}
 
 }
