@@ -16,6 +16,26 @@ public class Car implements Comparable<Car> {
 		this.price = price;
 	}
 
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	public String getMake() {
 		return make;
 	}
