@@ -19,14 +19,27 @@ public class ExecuteTransaction implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		if (c.name.equals("Customer5")) {
+			try {
+				throw new Exception("**Payment unsuccessful**");
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			}
+		}
+
 		c.balance += amount;
 		System.out.println(c.name + ", balance: " + c.balance);
 	}
 
-	// set customer updated everytime because of call in iterator;
+	// set customer updated every time because of call in iterator;
 	@Override
 	public void run() {
-		processTransaction(c1, amt);
-
+		try {
+			processTransaction(c1, amt);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
