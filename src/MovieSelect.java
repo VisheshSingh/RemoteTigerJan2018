@@ -17,8 +17,13 @@ public class MovieSelect {
 	}
 
 	public void getMovie() {
-		System.out.print("Which movie would you prefer watching?: ");
-		int number;
+		System.out.println("Which movie would you prefer watching?: ");
+		for (int i = 0; i < movieList.length; i++) {
+			System.out.println(movieList[i]);
+		}
+		int number = sc.nextInt();
+		System.out.println(
+				"You selected the movie " + movieList[number - 1].substring(3, movieList[number - 1].length()));
 		getSeats();
 	}
 
