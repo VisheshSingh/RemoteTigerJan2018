@@ -8,6 +8,7 @@ public class MovieSelect {
 	Scanner sc = new Scanner(System.in);
 	String[] movieList = { "1) Avengers", "2) Star Wars", "3) Coco", "4) The Foreigner" };
 	String name;
+	int number;
 
 	public void getName() {
 		System.out.print("Please enter your name: ");
@@ -21,16 +22,17 @@ public class MovieSelect {
 		for (int i = 0; i < movieList.length; i++) {
 			System.out.println(movieList[i]);
 		}
-		int number = sc.nextInt();
+		number = sc.nextInt();
 		System.out.println(
 				"You selected the movie " + movieList[number - 1].substring(3, movieList[number - 1].length()));
 		getSeats();
 	}
 
 	public void getSeats() {
-		System.out.print("How many tickets: ");
-		String seats;
-		seats = sc.nextLine();
+		System.out.print("How many seats: ");
+		String seats = sc.next();
+		System.out.println("Thank you!\nYou have selected " + seats + " seat(s) for the movie "
+				+ movieList[number - 1].substring(3, movieList[number - 1].length()));
 	}
 
 	public static void main(String[] args) {
